@@ -22,8 +22,7 @@
 我使用 [oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui)
 来在 ExLlamav2_HF 加载器上带着 缓存_8位 的启用来运行 [LLAMA 3 8B Instruct EXL2 4.0bpw](https://huggingface.co/turboderp/Llama-3-8B-Instruct-exl2/tree/4.0bpw)。 OpenAI api 扩展必须启用才可让我们和大语言模型互动。 text-generation-webui 和大语言模型必须分别安装和启动。
 
-Alternatively, you can load any other model into text-generation-webui or modify constants.py to point to any other
-openapi compatible endpoint. Note that this project uses some parameters not available on the official OpenAI API.
+事实上，你可以加载任意模型到 text-generation-webui 内或修改 constants.py 来指向任意的 openai 兼容的 endpoint。请注意此项目使用了一些不在OpenAI 官方 API 内支持的参数。
 
 ### Multimodal 大语言模型
 
@@ -35,9 +34,7 @@ text-only mode. The int4 quantized version uses approximately 8GB of VRAM.
 
 ### STT
 
-This project uses the excellent [KoljaB/RealtimeSTT](https://github.com/KoljaB/RealtimeSTT), which can transcribe an
-incoming audio stream, not just a file. This means that the text is transcribed as the person is talking, and so
-transcription ends almost immediately after speech ends. It is configured to use the faster_whisper tiny.en model.
+此项目使用这个很棒的 [KoljaB/RealtimeSTT](https://github.com/KoljaB/RealtimeSTT)，他可以翻译输入的音频流，而不只是文件。这意味着文本将随着人的交谈而翻译，且翻译会几乎在语句结束时瞬间停止。它被配置为使用 faster_whisper tiny.en 模型。
 
 ### TTS
 
