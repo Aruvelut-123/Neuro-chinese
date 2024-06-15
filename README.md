@@ -1,34 +1,31 @@
 # Neuro
 
-The goal of this project was to recreate Neuro-Sama, but only running on local models on consumer hardware.
-The original version was also created in only 7 days, so it is not exactly very sophisticated.
+此项目的目标为复刻Neuro-Sama，但只在消费者级硬件上运行本地模型。
+最初的版本本来只创建7天，所以它还没有那么sophisticated。
 
-![Screenshot of demo stream](./images/stream.png)
+![演示直播截图](./images/stream.png)
 
-## Features
-- Realtime STT for natural voice input
-- Realtime TTS for natural voice output
-- Clean frontend/control panel for easy moderation/interaction: [neurofrontend](https://github.com/kimjammer/neurofrontend)
-- Audio File playback (for pre-generated songs/covers created with something like [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI)
-- Vtube Studio Plugin & Model/Prop control
-- Flexible LLM - Load any model into text-generation-webui (tested) or use any openai-compatible endpoint (not tested).
-- 🌟 Memory/RAG - Long-term (persists across restarts) memories can be manually added, but they will also be 
-automatically generated as the AI talks. (See memories/readme.md for details)
-- 🌟 Vision/Multimodality - Automatic screenshots and prompting of multimodal models. (See [Neuro-LLM-Server](https://github.com/kimjammer/Neuro-LLM-Server))
+## 功能
+- 自然声音输入的实时STT
+- 自然声音输出的实时TTS
+- 为简单的moderation/互动而制作的干净的前端/控制面板: [neuro前端](https://github.com/kimjammer/neurofrontend)
+- 音频文件回放 (为了使用类似 [RVC](https://github.com/RVC-Project/Retrieval-based-Voice-Conversion-WebUI) 的预生成歌曲/covers)
+- Vtube Studio 插件 & 模型/Prop 控制
+- 灵活的大语言模型 - 可加载任意模型到 text-generation-webui 内 (已测试) 或使用任何 openai-兼容的endpoint (未测试)。
+- 🌟 内存/RAG - 长期 (每次重启后会 persists) 记忆可被手动加入，但它们也会在AI说话时被自动生成。 (查看 memories/readme.md 了解更多)
+- 🌟 视觉/Multimodality - 自动截屏并根据multimodal模型执行。 (查看 [Neuro-LLM-Server](https://github.com/kimjammer/Neuro-LLM-Server) 了解更多)
 
-## Architecture
+## 架构
 
-### LLM
+### 大语言模型
 
-I used [oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui)
-running [LLAMA 3 8B Instruct EXL2 4.0bpw](https://huggingface.co/turboderp/Llama-3-8B-Instruct-exl2/tree/4.0bpw) on the
-ExLlamav2_HF loader with cache_8bit turned on. The openai api extension must be turned on, as this is how we interact
-with the LLM. text-generation-webui and the LLM must be installed and started separately.
+我使用 [oobabooga/text-generation-webui](https://github.com/oobabooga/text-generation-webui)
+来在 ExLlamav2_HF 加载器上带着 缓存_8位 的启用来运行 [LLAMA 3 8B Instruct EXL2 4.0bpw](https://huggingface.co/turboderp/Llama-3-8B-Instruct-exl2/tree/4.0bpw)。 OpenAI api 扩展必须启用才可让我们和大语言模型互动。 text-generation-webui 和大语言模型必须分别安装和启动。
 
 Alternatively, you can load any other model into text-generation-webui or modify constants.py to point to any other
 openapi compatible endpoint. Note that this project uses some parameters not available on the official OpenAI API.
 
-### Multimodal LLM
+### Multimodal 大语言模型
 
 Like with the text-only LLM, you can use any openai api compatible endpoint (Be careful, many openai-like hosting servers
 are not actually compatible) to access any multimodal model. However, I'm using [MiniCPM-Llama3-V-2_5-int4](https://github.com/OpenBMB/MiniCPM-V) 
