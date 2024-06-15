@@ -36,20 +36,15 @@
 
 ### TTS
 
-This project also uses [KoljaB/RealtimeTTS](https://github.com/KoljaB/RealtimeTTS). It is configured to use CoquiTTS
-with the XTTSv2 model. If you like, you can fine tune a XTTSv2 Model with
-the [erew/alltalk_tts](https://github.com/erew123/alltalk_tts) repository. This also streams the audio out as it is
-generated, so we don't need to wait for transcription to fully finish before starting playback.
+此项目也使用了 [KoljaB/RealtimeTTS](https://github.com/KoljaB/RealtimeTTS)。它被配置为使用 CoquiTTS
+和 XTTSv2 模型。如果你喜欢，你可以 fine tune 一个 XTTSv2 模型，在 [erew/alltalk_tts](https://github.com/erew123/alltalk_tts) 库内可找到。这将同样输出生成的输出音频，所以我们不需要等待翻译完全完成才能开始回放。
 
-### Vtuber model control
+### 虚拟主播模型控制
 
-Vtuber model control is currently basic. The audio output from the TTS is piped
-into [vtube studio](https://denchisoft.com/) via a virtual audio cable with something
-like [this](https://vb-audio.com/Cable/), and Vtube Studio handles the lip sync. Read the Installation Section for more
-details. You can also trigger hotkeys or preprogrammed animations (microphone slide in/out) from the frontend. There
-are also buttons for moving/resizing the model into preprogrammed positions to transition between scenes. 
+虚拟主播模型控制目前较为基础。来自 TTS
+ 的音频输出将被传输至 [vtube studio](https://denchisoft.com/) 通过一条虚拟音频线例如 [这个](https://vb-audio.com/Cable/)，且 Vtube Studio 处理了 lip 同步。阅读安装栏目了解更多。你也可以从前端触发热键或预先编程的动画 (麦克风端 输入/输出)。这里同样还有为了移动/缩放模型到预先编程的位置来在场景见变换。
 
-### Modularization
+### 模块化
 
 Each concern of the program is separated out into its own python file/class. A single signals object is created and 
 passed to every class, and each class can read and write to the same signals object to share state and data. tts.py and 
