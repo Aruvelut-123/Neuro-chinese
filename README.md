@@ -26,11 +26,9 @@
 
 ### Multimodal 大语言模型
 
-Like with the text-only LLM, you can use any openai api compatible endpoint (Be careful, many openai-like hosting servers
-are not actually compatible) to access any multimodal model. However, I'm using [MiniCPM-Llama3-V-2_5-int4](https://github.com/OpenBMB/MiniCPM-V) 
-on my custom and extremely jank [Neuro-LLM-Server](https://github.com/kimjammer/Neuro-LLM-Server) to host the model.
-This model has amazing high resolution input, great OCR, and is based on Llama 3 so the output is very similar to the
-text-only mode. The int4 quantized version uses approximately 8GB of VRAM.
+就像仅文本大语言模型一样，你也可以使用任何 OpenAI API 兼容的endpoint (请小心，很多 OpenAI-类似 的服务器都不会真正的兼容) 来访问任何 multimodal 模型。但是，我在使用 [MiniCPM-Llama3-V-2_5-int4](https://github.com/OpenBMB/MiniCPM-V) 
+模型搭建在我的自定义且极其垃圾的 [Neuro-LLM-Server](https://github.com/kimjammer/Neuro-LLM-Server) 服务器上。
+此模型拥有很好的高分辨率输入，很好的 OCR，且它是基于 Llama 3 的所有输出也会特别像仅文字模式。这个 int4 quantized 版本使用 approximately 8GB 的显存。
 
 ### STT
 
